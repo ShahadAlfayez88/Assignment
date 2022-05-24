@@ -92,12 +92,11 @@ searchResult({num? searchInput}) {
 
 // choice 3 function
 deleteResult({int? deleteInput}) {
-  for (var x in students) {
-    if (x["id"] == deleteInput) {
-      print("the result");
-      x.remove(deleteInput);
-    } else {
-      print(x);
+  for (var i = 0; i < students.length; i++) {
+    if (students[i]["id"] == deleteInput) {
+      students.removeAt(i);
+      print("deleted successfully");
     }
+    print(students[i]);
   }
 }

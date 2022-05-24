@@ -81,22 +81,34 @@ selectedUsers({String? inputUser}) {
 
 // choice 2 function
 searchResult({num? searchInput}) {
+  bool found = false;
   for (var x in students) {
     if (x["id"] == searchInput) {
       print("the result");
       print(x);
-      return x;
+    } else {
+      found = true;
     }
+  }
+  if (found == false) {
+    print("not found");
   }
 }
 
 // choice 3 function
 deleteResult({int? deleteInput}) {
+  bool found = false;
   for (var i = 0; i < students.length; i++) {
     if (students[i]["id"] == deleteInput) {
       students.removeAt(i);
-      print("deleted successfully");
+      found = true;
     }
     print(students[i]);
+  }
+
+  if (found == false) {
+    print("not found");
+  } else {
+    print("deleted successfully");
   }
 }
